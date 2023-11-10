@@ -47,7 +47,12 @@ class TomatoScreen extends StatelessWidget {
                 ),
               )
             ],
-          )
+          ),
+          Center(
+              child: Image.asset(
+            "assets/images/img1.png",
+            height: 250,
+          )),
         ],
       ),
     );
