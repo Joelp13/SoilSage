@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:soil_sage/Screens/home_screen.dart';
 import 'package:soil_sage/Screens/youtube_player.dart';
 import 'package:soil_sage/utils/app_layout.dart';
@@ -60,7 +61,7 @@ class TomatoScreen extends StatelessWidget {
           )),
           Container(
             width: screenWidth,
-            height: MediaQuery.of(context).size.height * 0.60,
+            height: MediaQuery.of(context).size.height,
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(10)),
             padding: EdgeInsets.symmetric(
@@ -73,11 +74,12 @@ class TomatoScreen extends StatelessWidget {
                   height: 10,
                 ),
                 Text(
-                  "Tomatoes",style: Styles.headLineStyle1,),
+                  "Tomatoes",
+                  style: Styles.headLineStyle1,
+                ),
                 SizedBox(
                   height: 20,
                 ),
-
                 Text(
                   "About",
                   style: Styles.headLineStyle2,
@@ -178,22 +180,60 @@ class TomatoScreen extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                CircleAvatar(
-                  radius: 20,
-                  backgroundColor: Colors.white,
-                  child: IconButton(
-                    color: Color(0xff4c505b),
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                          context as BuildContext,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  const YouTube()));
-                    },
-                    icon: Icon(Icons.heart_broken_rounded),
-                    iconSize: 20,
+                Center(
+                  child: Stack(
+                    children: [
+                      Container(
+                        width: 350,
+                        height: 200,
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                              width: 4,
+                              color: Colors.white,
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                  spreadRadius: 4,
+                                  blurRadius: 10,
+                                  color: Colors.black.withOpacity(0.1))
+                            ],
+                            shape: BoxShape.rectangle,
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage("assets/images/bg.png"))),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: Container(
+                            height: 45,
+                            width: 45,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(width: 4, color: Colors.white),
+                              color: Colors.teal.shade900,
+                            ),
+                            child: CircleAvatar(
+                              radius: 40,
+                              backgroundColor: Color(0xff4c505b),
+                              child: IconButton(
+                                color: Colors.white,
+                                onPressed: () {
+                                  /*Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const HomeScreen()));*/
+                                  Navigator.push(
+                                    context,
+                                    PageTransition(
+                                        child: YouTube(),
+                                        type: PageTransitionType.leftToRight),
+                                  );
+                                },
+                                icon: Icon(Icons.play_arrow),
+                              ),
+                            )),
+                      )
+                    ],
                   ),
-                )
+                ),
               ],
             ),
           )
