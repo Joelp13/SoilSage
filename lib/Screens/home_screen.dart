@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:soil_sage/Screens/community_screen.dart';
 import 'package:soil_sage/Screens/profile_screen.dart';
 import 'package:soil_sage/Screens/shop_screen.dart';
+import 'package:soil_sage/Screens/tomato_screen.dart';
 import 'package:soil_sage/utils/app_layout.dart';
 import 'package:soil_sage/utils/app_styles.dart';
 import 'package:soil_sage/widgets/tickets_tab.dart';
@@ -156,7 +157,9 @@ class HomeScreen extends StatelessWidget {
                                 height: 120,
                               ),
                               Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
+                                  
                                   Text(
                                     "Tomatoes",
                                     style: Styles.headLineStyle2.copyWith(
@@ -164,6 +167,19 @@ class HomeScreen extends StatelessWidget {
                                         color: Colors.teal.shade900,
                                         fontSize: 24),
                                   ),
+                                  CircleAvatar(
+                                    radius: 10,
+                                    backgroundColor: Colors.transparent,
+                                    child: IconButton(
+                                      onPressed: () {
+                                        Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const TomatoScreen()));
+                                        
+                                      },
+                                      color: Colors.black,
+                                      icon: Icon(Icons.arrow_forward),
+                                    ),
+
+                                  )
                                 ],
                               )
                             ],
