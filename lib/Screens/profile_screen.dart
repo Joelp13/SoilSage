@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:soil_sage/Screens/community_screen.dart';
 import 'package:soil_sage/Screens/home_screen.dart';
 import 'package:soil_sage/Screens/shop_screen.dart';
-
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -149,8 +148,10 @@ class ProfileScreen extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: 30),
       child: TextField(
-        obscureText: isPasswordTextField ? true : false,
-      ),
-    );
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.only(bottom: 35)
+          
+          ),)
+        );
   }
 }
