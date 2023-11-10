@@ -73,12 +73,11 @@ class TomatoScreen extends StatelessWidget {
                   height: 10,
                 ),
                 Text(
-                  "Tomatoes",
-                  style: Styles.headLineStyle1,
-                ),
+                  "Tomatoes",style: Styles.headLineStyle1,),
                 SizedBox(
                   height: 20,
                 ),
+
                 Text(
                   "About",
                   style: Styles.headLineStyle2,

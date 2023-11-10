@@ -9,7 +9,7 @@ class YouTube extends StatefulWidget {
 }
 
 class _YouTubeState extends State<YouTube> {
-  final videoUrl = "https://www.youtube.com/watch?v=fIjDdOFdYBI";
+  final videoUrl = "https://www.youtube.com/watch?v=fIjDdOFdYBI&ab_channel=ProjectDiaries";
   // ignore: prefer_typing_uninitialized_variables
   late YoutubePlayerController _controller;
   @override
