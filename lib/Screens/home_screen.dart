@@ -12,29 +12,33 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
-    return Scaffold( bottomNavigationBar: BottomNavigationBar(
+    return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
           currentIndex: 0,
           onTap: (index) {
-            if (index==1)
-            {
-              Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const ShopScreen()));
+            if (index == 1) {
+              Navigator.pushReplacement(
+                  context as BuildContext,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => const ShopScreen()));
+            } else if (index == 2) {
+              Navigator.pushReplacement(
+                  context as BuildContext,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                          const CommunityScreen()));
+            } else if (index == 3) {
+              Navigator.pushReplacement(
+                  context as BuildContext,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                          const ProfileScreen()));
+            } else if (index == 0) {
+              Navigator.pushReplacement(
+                  context as BuildContext,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => const HomeScreen()));
             }
-            else if(index==2)
-            {
-                   Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const CommunityScreen()));
-         
-            }
-            else if(index==3)
-            {
-                   Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const ProfileScreen()));
-         
-            }
-            else if(index==0)
-            {
-                   Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const HomeScreen()));
-         
-            }
-
           },
           elevation: 10,
           showSelectedLabels: true,
@@ -288,6 +292,93 @@ class HomeScreen extends StatelessWidget {
             Text(
               "Most Viewed",
               style: Styles.headLineStyle2.copyWith(color: Colors.black),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.only(left: 20),
+              child: Row(
+                children: [
+                  Container(
+                    width: size.width * 0.64,
+                    height: 350,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 15, vertical: 17),
+                    margin: const EdgeInsets.only(right: 17, top: 5),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 180, 220, 198),
+                        borderRadius: BorderRadius.circular(24),
+                        boxShadow: [BoxShadow(color: Colors.grey.shade200)]),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 150,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              color: Styles.primaryColor,
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(
+                                      "assets/images/tomatoes.jpg"))),
+                        ),
+                        SizedBox(height: 10),
+                        Text("Tomatoes",
+                            style: Styles.headLineStyle2
+                                .copyWith(color: Colors.white, fontSize: 29)),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "Despite being a fruit it is prepared like a vegetable.They are a great source of vitamin C ,potassium and folate.",
+                          style: Styles.headLineStyle4
+                              .copyWith(color: Colors.white, fontSize: 16),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: size.width * 0.64,
+                    height: 350,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 15, vertical: 17),
+                    margin: const EdgeInsets.only(right: 17, top: 5),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 180, 220, 198),
+                        borderRadius: BorderRadius.circular(24),
+                        boxShadow: [BoxShadow(color: Colors.grey.shade200)]),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 150,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              color: Styles.primaryColor,
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image:
+                                      AssetImage("assets/images/chilli.jpg"))),
+                        ),
+                        SizedBox(height: 10),
+                        Text("Chillies",
+                            style: Styles.headLineStyle2
+                                .copyWith(color: Colors.white, fontSize: 29)),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "Despite being a fruit it is prepared like a vegetable.They are a great source of vitamin C ,potassium and folate.",
+                          style: Styles.headLineStyle4
+                              .copyWith(color: Colors.white, fontSize: 16),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
             )
           ]),
     );

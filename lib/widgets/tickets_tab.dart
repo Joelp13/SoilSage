@@ -24,7 +24,7 @@ class AppTicketTabs extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.horizontal(
                       left: Radius.circular(50), right: Radius.circular(50)),
-                  color: Colors.green,
+                  color: Color.fromARGB(250, 228, 240, 234),
                 ),
                 child: Center(
                   child: Text(firstTab),
@@ -62,7 +62,7 @@ class AppTicketTabs extends StatelessWidget {
           ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),
-            color: Colors.lightGreen,
+            color: Color.fromARGB(255, 180, 220, 198),
           )),
     );
   }
