@@ -66,16 +66,111 @@ class TomatoScreen extends StatelessWidget {
               horizontal: 12,
             ),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(
+                  height: 10,
+                ),
                 Text(
                   "Tomatoes",
                   style: Styles.headLineStyle1,
                 ),
+                SizedBox(
+                  height: 20,
+                ),
                 Text(
                   "About",
                   style: Styles.headLineStyle2,
-                )
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  "The tomato is the edible berry of the plant commonly known as the tomato plant. The species originated in western South America,Mexico, and Central America. Its domestication and use as a cultivated food may have originated with the indigenous people of Mexico.",
+                  style: Styles.headLineStyle3
+                      .copyWith(fontSize: 18, color: Colors.black),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Energy",
+                      style:
+                          Styles.headLineStyle3.copyWith(color: Colors.black),
+                    ),
+                    Text(
+                      "74 kj(18kcal)",
+                      style:
+                          Styles.headLineStyle3.copyWith(color: Colors.black),
+                    )
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Carbohydrates",
+                      style:
+                          Styles.headLineStyle3.copyWith(color: Colors.black),
+                    ),
+                    Text(
+                      "3.9g",
+                      style:
+                          Styles.headLineStyle3.copyWith(color: Colors.black),
+                    )
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Sugar",
+                      style:
+                          Styles.headLineStyle3.copyWith(color: Colors.black),
+                    ),
+                    Text(
+                      "2.6g",
+                      style:
+                          Styles.headLineStyle3.copyWith(color: Colors.black),
+                    )
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Fibre",
+                      style:
+                          Styles.headLineStyle3.copyWith(color: Colors.black),
+                    ),
+                    Text(
+                      "1.2g",
+                      style:
+                          Styles.headLineStyle3.copyWith(color: Colors.black),
+                    )
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Fat",
+                      style:
+                          Styles.headLineStyle3.copyWith(color: Colors.black),
+                    ),
+                    Text(
+                      "0.2g",
+                      style:
+                          Styles.headLineStyle3.copyWith(color: Colors.black),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
               ],
             ),
           )
