@@ -95,8 +95,12 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 50,
             ),
+            buildtextField("Full Name", "Joel"),
+            buildtextField("Email", "joelp13@gmail.com"),
+            buildtextField("Phone Number", "+91 8089444908"),
+            buildtextField("Location", "Kakkand"),
           ],
         ),
       ),
@@ -144,12 +148,20 @@ class ProfileScreen extends StatelessWidget {
     );
 
   }
-  Widget buildtextField(String labelText,String placeholder,bool isPasswordTextField){
+  Widget buildtextField(String labelText,String placeholder){
     return Padding(
-      padding: EdgeInsets.only(bottom: 30),
+      padding: EdgeInsets.only(bottom: 30,left: 40,right: 30),
       child: TextField(
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.only(bottom: 35)
+          contentPadding: EdgeInsets.only(bottom: 5),
+          labelText: labelText,
+          floatingLabelBehavior: FloatingLabelBehavior.always ,
+          hintText: placeholder,
+          hintStyle: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          )
           
           ),)
         );
