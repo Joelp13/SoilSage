@@ -27,7 +27,10 @@ class AppTicketTabs extends StatelessWidget {
                   color: Color.fromARGB(250, 228, 240, 234),
                 ),
                 child: Center(
-                  child: Text(firstTab),
+                  child: Text(firstTab,style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),),
                 ),
               ),
               Container(

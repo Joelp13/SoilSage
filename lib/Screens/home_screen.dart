@@ -68,7 +68,7 @@ class HomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30),
                       image: const DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage("assets/images/user.png")),
+                          image: AssetImage("assets/images/iconperson.png")),
                     )),
                 Container(
                     height: 30,
@@ -77,7 +77,7 @@ class HomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30),
                       image: const DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage("assets/images/down.png")),
+                          image: AssetImage("assets/images/iconmenu.png")),
                     ))
               ],
             ),
@@ -86,11 +86,15 @@ class HomeScreen extends StatelessWidget {
             ),
             Text(
               "Let's Find  Your",
-              style: Styles.headLineStyle1,
+              style: Styles.headLineStyle1.copyWith(
+                fontSize: 40,
+              ),
             ),
             Text(
               "Plants !",
-              style: Styles.headLineStyle1,
+              style: Styles.headLineStyle1.copyWith(
+                fontSize: 40,
+              ),
             ),
             Column(
               children: [
@@ -111,7 +115,10 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Text(
                         "Search",
-                        style: Styles.headLineStyle4,
+                        style: Styles.headLineStyle4.copyWith(
+                          color: Colors.teal.shade700,
+                          fontWeight: FontWeight.bold,
+                        ),
                       )
                     ],
                   ),
