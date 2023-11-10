@@ -60,7 +60,7 @@ class TomatoScreen extends StatelessWidget {
           )),
           Container(
             width: screenWidth,
-            height: MediaQuery.of(context).size.height * 0.60,
+            height: MediaQuery.of(context).size.height,
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(10)),
             padding: EdgeInsets.symmetric(
@@ -179,6 +179,14 @@ class TomatoScreen extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
+                Container(
+                    height: 250,
+                    width: 400,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/images/bg.png")),
+                    )),
                 CircleAvatar(
                   radius: 20,
                   backgroundColor: Colors.white,
@@ -191,7 +199,7 @@ class TomatoScreen extends StatelessWidget {
                               builder: (BuildContext context) =>
                                   const YouTube()));
                     },
-                    icon: Icon(Icons.heart_broken_rounded),
+                    icon: Icon(Icons.play_circle),
                     iconSize: 20,
                   ),
                 )
