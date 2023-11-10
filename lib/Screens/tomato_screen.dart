@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:soil_sage/Screens/home_screen.dart';
+import 'package:soil_sage/Screens/youtube_player.dart';
 import 'package:soil_sage/utils/app_layout.dart';
 import 'package:soil_sage/utils/app_styles.dart';
 
@@ -169,8 +170,31 @@ class TomatoScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
+                Text(
+                  "Steps to cultivate Tomatoes",
+                  style: Styles.headLineStyle2,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                CircleAvatar(
+                  radius: 20,
+                  backgroundColor: Colors.white,
+                  child: IconButton(
+                    color: Color(0xff4c505b),
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context as BuildContext,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  const YouTube()));
+                    },
+                    icon: Icon(Icons.heart_broken_rounded),
+                    iconSize: 20,
+                  ),
+                )
               ],
             ),
           )
