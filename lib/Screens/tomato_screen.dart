@@ -70,8 +70,7 @@ class TomatoScreen extends StatelessWidget {
               children: [
                 Text(
                   "Tomatoes",
-                  style: Styles.headLineStyle1,
-                ),
+                  style: Styles.headLineStyle1),
                 Text(
                   "About",
                   style: Styles.headLineStyle2,

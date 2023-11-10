@@ -9,6 +9,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text('Profile'),elevation: 0,),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: 3,
           onTap: (index) {
@@ -47,6 +48,8 @@ class ProfileScreen extends StatelessWidget {
                 icon: Icon(Icons.messenger_rounded), label: "Commmunity"),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile")
           ]),
+     
     );
+
   }
 }
