@@ -51,6 +51,7 @@ class _MyloginState extends State<Mylogin> {
                     height: 30,
                   ),
                   TextField(
+                    obscureText: true,
                     decoration: InputDecoration(
                       prefixIcon:Icon(Icons.lock),
                       fillColor: Colors.grey.shade100,

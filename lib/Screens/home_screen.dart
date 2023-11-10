@@ -148,12 +148,16 @@ class HomeScreen extends StatelessWidget {
                               SizedBox(
                                 height: 120,
                               ),
-                              Text(
-                                "Tomatoes",
-                                style: Styles.headLineStyle2.copyWith(
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.white,
-                                    fontSize: 24),
+                              Row(
+                                children: [
+                                  Text(
+                                    "Tomatoes",
+                                    style: Styles.headLineStyle2.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.teal.shade900,
+                                        fontSize: 24),
+                                  ),
+                                ],
                               )
                             ],
                           ),
@@ -202,8 +206,8 @@ class HomeScreen extends StatelessWidget {
                               Text(
                                 "Spinach",
                                 style: Styles.headLineStyle2.copyWith(
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.teal.shade900,
                                     fontSize: 24),
                               )
                             ],
@@ -253,8 +257,8 @@ class HomeScreen extends StatelessWidget {
                               Text(
                                 "Tomatoes",
                                 style: Styles.headLineStyle2.copyWith(
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.teal.shade900,
                                     fontSize: 24),
                               )
                             ],
@@ -327,14 +331,14 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(height: 10),
                         Text("Tomatoes",
                             style: Styles.headLineStyle2
-                                .copyWith(color: Colors.white, fontSize: 29)),
+                                .copyWith(color: Colors.teal.shade900, fontSize: 29,fontWeight: FontWeight.bold)),
                         SizedBox(
                           height: 5,
                         ),
                         Text(
                           "Despite being a fruit it is prepared like a vegetable.They are a great source of vitamin C ,potassium and folate.",
                           style: Styles.headLineStyle4
-                              .copyWith(color: Colors.white, fontSize: 16),
+                              .copyWith(color: Colors.teal.shade900, fontSize: 16),
                         )
                       ],
                     ),
@@ -365,14 +369,14 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(height: 10),
                         Text("Chillies",
                             style: Styles.headLineStyle2
-                                .copyWith(color: Colors.white, fontSize: 29)),
+                                .copyWith(color: Colors.teal.shade900, fontSize: 29,fontWeight: FontWeight.bold)),
                         SizedBox(
                           height: 5,
                         ),
                         Text(
                           "Despite being a fruit it is prepared like a vegetable.They are a great source of vitamin C ,potassium and folate.",
                           style: Styles.headLineStyle4
-                              .copyWith(color: Colors.white, fontSize: 16),
+                              .copyWith(color: Colors.teal.shade900, fontSize: 16),
                         )
                       ],
                     ),
