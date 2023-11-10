@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:soil_sage/Screens/home_screen.dart';
 import 'package:soil_sage/main.dart';
 
@@ -98,7 +99,10 @@ class _MyloginState extends State<Mylogin> {
                           color: Colors.white,
                           onPressed:() {
                             getlocation();
-                            Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const HomeScreen()));
+                            /*Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const HomeScreen()));*/
+                            Navigator.push(context, 
+                            PageTransition(child: HomeScreen(),type: 
+                            PageTransitionType.leftToRight),);
                           },
                           icon: Icon(Icons.arrow_forward),
                         ),
