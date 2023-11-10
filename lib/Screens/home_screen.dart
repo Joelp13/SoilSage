@@ -165,10 +165,10 @@ class HomeScreen extends StatelessWidget {
                                     style: Styles.headLineStyle2.copyWith(
                                         fontWeight: FontWeight.bold,
                                         color: Colors.teal.shade900,
-                                        fontSize: 24),
+                                        fontSize: 20),
                                   ),
                                   CircleAvatar(
-                                    radius: 10,
+                                    radius: 20,
                                     backgroundColor: Colors.transparent,
                                     child: IconButton(
                                       onPressed: () {
@@ -226,12 +226,29 @@ class HomeScreen extends StatelessWidget {
                               SizedBox(
                                 height: 120,
                               ),
-                              Text(
-                                "Spinach",
-                                style: Styles.headLineStyle2.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.teal.shade900,
-                                    fontSize: 24),
+                              Row(
+                                children: [
+                                  Text(
+                                    "Spinach",
+                                    style: Styles.headLineStyle2.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.teal.shade900,
+                                        fontSize: 20),
+                                  ),
+                                  CircleAvatar(
+                                        radius: 20,
+                                        backgroundColor: Colors.transparent,
+                                        child: IconButton(
+                                          onPressed: () {
+                                            
+                                            
+                                          },
+                                          color: Colors.black,
+                                          icon: Icon(Icons.arrow_forward),
+                                        ),
+
+                                      ),
+                                ],
                               )
                             ],
                           ),
