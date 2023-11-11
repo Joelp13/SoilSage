@@ -9,15 +9,15 @@ import 'package:soil_sage/login.dart';
 void main() {
   runApp(const MyApp());
 }
-void getlocation() async
-{
-   await Geolocator.checkPermission();
-   await Geolocator.requestPermission();
 
-Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.best);
-print('ss');
-print(position);
+void getlocation() async {
+  await Geolocator.checkPermission();
+  await Geolocator.requestPermission();
 
+  Position position = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.best);
+  print('ss');
+  print(position);
 }
 
 class MyApp extends StatelessWidget {
@@ -25,12 +25,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primaryColor: Colors.white,
-      ),
-      home: const Mylogin()
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primaryColor: Colors.white,
+        ),
+        home: const Mylogin());
   }
 }
