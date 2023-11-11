@@ -159,7 +159,6 @@ class HomeScreen extends StatelessWidget {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  
                                   Text(
                                     "Tomatoes",
                                     style: Styles.headLineStyle2.copyWith(
@@ -172,13 +171,16 @@ class HomeScreen extends StatelessWidget {
                                     backgroundColor: Colors.transparent,
                                     child: IconButton(
                                       onPressed: () {
-                                        Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const TomatoScreen()));
-                                        
+                                        Navigator.pushReplacement(
+                                            context as BuildContext,
+                                            MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        const TomatoScreen()));
                                       },
                                       color: Colors.black,
                                       icon: Icon(Icons.arrow_forward),
                                     ),
-
                                   )
                                 ],
                               )
@@ -236,18 +238,14 @@ class HomeScreen extends StatelessWidget {
                                         fontSize: 20),
                                   ),
                                   CircleAvatar(
-                                        radius: 20,
-                                        backgroundColor: Colors.transparent,
-                                        child: IconButton(
-                                          onPressed: () {
-                                            
-                                            
-                                          },
-                                          color: Colors.black,
-                                          icon: Icon(Icons.arrow_forward),
-                                        ),
-
-                                      ),
+                                    radius: 20,
+                                    backgroundColor: Colors.transparent,
+                                    child: IconButton(
+                                      onPressed: () {},
+                                      color: Colors.black,
+                                      icon: Icon(Icons.arrow_forward),
+                                    ),
+                                  ),
                                 ],
                               )
                             ],
@@ -370,15 +368,17 @@ class HomeScreen extends StatelessWidget {
                         ),
                         SizedBox(height: 10),
                         Text("Tomatoes",
-                            style: Styles.headLineStyle2
-                                .copyWith(color: Colors.teal.shade900, fontSize: 29,fontWeight: FontWeight.bold)),
+                            style: Styles.headLineStyle2.copyWith(
+                                color: Colors.teal.shade900,
+                                fontSize: 29,
+                                fontWeight: FontWeight.bold)),
                         SizedBox(
                           height: 5,
                         ),
                         Text(
                           "Despite being a fruit it is prepared like a vegetable.They are a great source of vitamin C ,potassium and folate.",
-                          style: Styles.headLineStyle4
-                              .copyWith(color: Colors.teal.shade900, fontSize: 16),
+                          style: Styles.headLineStyle4.copyWith(
+                              color: Colors.teal.shade900, fontSize: 16),
                         )
                       ],
                     ),
@@ -408,15 +408,17 @@ class HomeScreen extends StatelessWidget {
                         ),
                         SizedBox(height: 10),
                         Text("Chillies",
-                            style: Styles.headLineStyle2
-                                .copyWith(color: Colors.teal.shade900, fontSize: 29,fontWeight: FontWeight.bold)),
+                            style: Styles.headLineStyle2.copyWith(
+                                color: Colors.teal.shade900,
+                                fontSize: 29,
+                                fontWeight: FontWeight.bold)),
                         SizedBox(
                           height: 5,
                         ),
                         Text(
                           "Despite being a fruit it is prepared like a vegetable.They are a great source of vitamin C ,potassium and folate.",
-                          style: Styles.headLineStyle4
-                              .copyWith(color: Colors.teal.shade900, fontSize: 16),
+                          style: Styles.headLineStyle4.copyWith(
+                              color: Colors.teal.shade900, fontSize: 16),
                         )
                       ],
                     ),
