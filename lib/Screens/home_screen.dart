@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:soil_sage/Screens/community_screen.dart';
 import 'package:soil_sage/Screens/profile_screen.dart';
 import 'package:soil_sage/Screens/shop_screen.dart';
+import 'package:soil_sage/Screens/tomato_screen.dart';
 import 'package:soil_sage/utils/app_layout.dart';
 import 'package:soil_sage/utils/app_styles.dart';
 import 'package:soil_sage/widgets/tickets_tab.dart';
@@ -12,29 +13,33 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
-    return Scaffold( bottomNavigationBar: BottomNavigationBar(
+    return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
           currentIndex: 0,
           onTap: (index) {
-            if (index==1)
-            {
-              Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const ShopScreen()));
+            if (index == 1) {
+              Navigator.pushReplacement(
+                  context as BuildContext,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => const ShopScreen()));
+            } else if (index == 2) {
+              Navigator.pushReplacement(
+                  context as BuildContext,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                          const CommunityScreen()));
+            } else if (index == 3) {
+              Navigator.pushReplacement(
+                  context as BuildContext,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                          const ProfileScreen()));
+            } else if (index == 0) {
+              Navigator.pushReplacement(
+                  context as BuildContext,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => const HomeScreen()));
             }
-            else if(index==2)
-            {
-                   Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const CommunityScreen()));
-         
-            }
-            else if(index==3)
-            {
-                   Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const ProfileScreen()));
-         
-            }
-            else if(index==0)
-            {
-                   Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const HomeScreen()));
-         
-            }
-
           },
           elevation: 10,
           showSelectedLabels: true,
@@ -64,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30),
                       image: const DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage("assets/images/user.png")),
+                          image: AssetImage("assets/images/iconperson.png")),
                     )),
                 Container(
                     height: 30,
@@ -73,7 +78,7 @@ class HomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30),
                       image: const DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage("assets/images/down.png")),
+                          image: AssetImage("assets/images/iconmenu.png")),
                     ))
               ],
             ),
@@ -82,11 +87,15 @@ class HomeScreen extends StatelessWidget {
             ),
             Text(
               "Let's Find  Your",
-              style: Styles.headLineStyle1,
+              style: Styles.headLineStyle1.copyWith(
+                fontSize: 40,
+              ),
             ),
             Text(
               "Plants !",
-              style: Styles.headLineStyle1,
+              style: Styles.headLineStyle1.copyWith(
+                fontSize: 40,
+              ),
             ),
             Column(
               children: [
@@ -107,7 +116,10 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Text(
                         "Search",
-                        style: Styles.headLineStyle4,
+                        style: Styles.headLineStyle4.copyWith(
+                          color: Colors.teal.shade700,
+                          fontWeight: FontWeight.bold,
+                        ),
                       )
                     ],
                   ),
@@ -144,12 +156,33 @@ class HomeScreen extends StatelessWidget {
                               SizedBox(
                                 height: 120,
                               ),
-                              Text(
-                                "Tomatoes",
-                                style: Styles.headLineStyle2.copyWith(
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.white,
-                                    fontSize: 24),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Tomatoes",
+                                    style: Styles.headLineStyle2.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.teal.shade900,
+                                        fontSize: 20),
+                                  ),
+                                  CircleAvatar(
+                                    radius: 20,
+                                    backgroundColor: Colors.transparent,
+                                    child: IconButton(
+                                      onPressed: () {
+                                        Navigator.pushReplacement(
+                                            context as BuildContext,
+                                            MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        const TomatoScreen()));
+                                      },
+                                      color: Colors.black,
+                                      icon: Icon(Icons.arrow_forward),
+                                    ),
+                                  )
+                                ],
                               )
                             ],
                           ),
@@ -195,12 +228,25 @@ class HomeScreen extends StatelessWidget {
                               SizedBox(
                                 height: 120,
                               ),
-                              Text(
-                                "Spinach",
-                                style: Styles.headLineStyle2.copyWith(
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.white,
-                                    fontSize: 24),
+                              Row(
+                                children: [
+                                  Text(
+                                    "Spinach",
+                                    style: Styles.headLineStyle2.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.teal.shade900,
+                                        fontSize: 20),
+                                  ),
+                                  CircleAvatar(
+                                    radius: 20,
+                                    backgroundColor: Colors.transparent,
+                                    child: IconButton(
+                                      onPressed: () {},
+                                      color: Colors.black,
+                                      icon: Icon(Icons.arrow_forward),
+                                    ),
+                                  ),
+                                ],
                               )
                             ],
                           ),
@@ -249,8 +295,8 @@ class HomeScreen extends StatelessWidget {
                               Text(
                                 "Tomatoes",
                                 style: Styles.headLineStyle2.copyWith(
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.teal.shade900,
                                     fontSize: 24),
                               )
                             ],
@@ -288,6 +334,97 @@ class HomeScreen extends StatelessWidget {
             Text(
               "Most Viewed",
               style: Styles.headLineStyle2.copyWith(color: Colors.black),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.only(left: 20),
+              child: Row(
+                children: [
+                  Container(
+                    width: size.width * 0.64,
+                    height: 350,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 15, vertical: 17),
+                    margin: const EdgeInsets.only(right: 17, top: 5),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 180, 220, 198),
+                        borderRadius: BorderRadius.circular(24),
+                        boxShadow: [BoxShadow(color: Colors.grey.shade200)]),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 150,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              color: Styles.primaryColor,
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(
+                                      "assets/images/tomatoes.jpg"))),
+                        ),
+                        SizedBox(height: 10),
+                        Text("Tomatoes",
+                            style: Styles.headLineStyle2.copyWith(
+                                color: Colors.teal.shade900,
+                                fontSize: 29,
+                                fontWeight: FontWeight.bold)),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "Despite being a fruit it is prepared like a vegetable.They are a great source of vitamin C ,potassium and folate.",
+                          style: Styles.headLineStyle4.copyWith(
+                              color: Colors.teal.shade900, fontSize: 16),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: size.width * 0.64,
+                    height: 350,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 15, vertical: 17),
+                    margin: const EdgeInsets.only(right: 17, top: 5),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 180, 220, 198),
+                        borderRadius: BorderRadius.circular(24),
+                        boxShadow: [BoxShadow(color: Colors.grey.shade200)]),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 150,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              color: Styles.primaryColor,
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image:
+                                      AssetImage("assets/images/chilli.jpg"))),
+                        ),
+                        SizedBox(height: 10),
+                        Text("Chillies",
+                            style: Styles.headLineStyle2.copyWith(
+                                color: Colors.teal.shade900,
+                                fontSize: 29,
+                                fontWeight: FontWeight.bold)),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "Despite being a fruit it is prepared like a vegetable.They are a great source of vitamin C ,potassium and folate.",
+                          style: Styles.headLineStyle4.copyWith(
+                              color: Colors.teal.shade900, fontSize: 16),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
             )
           ]),
     );
