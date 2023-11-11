@@ -31,10 +31,10 @@ class ShopScreen extends StatelessWidget {
                                 const HomeScreen()));
           },
         ),),
-        body: Column(
+        body: ListView(
           children: [
                 const SizedBox(
-                  height: 100,
+                  height: 50,
                 ),
                 Container(
                   decoration: BoxDecoration(
@@ -86,10 +86,162 @@ class ShopScreen extends StatelessWidget {
                           )
                         ),
                         
-                      )
+                      ),
+                      
                     ],
                   ),
-                )
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Column(
+                            children: [
+                            Text('         Pots And Plants By Agricon                         ',textAlign: TextAlign.left,
+                            style: Styles.headLineStyle1.copyWith(
+                              fontSize: 20,
+                              color: Colors.teal.shade900,
+                              fontWeight: FontWeight.bold,
+                            ),),
+                            Text('          Opposite refinery gate, Seaport Airport Road, Kakkanad',textAlign: TextAlign.left,
+                            style: Styles.headLineStyle1.copyWith(
+                              fontSize: 15,
+                            ),),
+                            Row(
+                              children: [
+                                Text('4.0',style: TextStyle(
+                                  fontWeight: FontWeight.bold
+                                ),),
+                                Icon(Icons.star),
+                                 Icon(Icons.star),
+                                  Icon(Icons.star),
+                                   Icon(Icons.star),
+                                Text('                                                       '), 
+                              ],
+                            )
+                            
+                            ],
+
+                          ),
+                    
+                    
+                  ],
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                Center(
+                  child: Container(
+                          width: 350,
+                          height: 200,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12.0),
+                            border: Border.all(
+                              width: 4,
+                              color: Colors.white,
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                spreadRadius: 4,
+                                blurRadius: 10,
+                                color: Colors.black.withOpacity(0.1))
+                            ],
+                            shape: BoxShape.rectangle,
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/store2.png")
+                            )
+                          ),
+                          
+                        ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Column(
+                            children: [
+                            Text('         Urban Jungle-Indoor Plants                         ',textAlign: TextAlign.left,
+                            style: Styles.headLineStyle1.copyWith(
+                              fontSize: 20,
+                              color: Colors.teal.shade900,
+                              fontWeight: FontWeight.bold,
+                            ),),
+                            Text('     Thuthiyoor Rd, Kakkanad                                        ',textAlign: TextAlign.left,
+                            style: Styles.headLineStyle1.copyWith(
+                              fontSize: 15,
+                            ),),
+                            Row(
+                              children: [
+                                Text('3.0',style: TextStyle(
+                                  fontWeight: FontWeight.bold
+                                ),),
+                                Icon(Icons.star),
+                                Icon(Icons.star),
+                                Icon(Icons.star),
+                                Text('                                                       '), 
+                              ],
+                            )
+                            ],
+
+                          ),
+                  ],
+                ),
+
+                SizedBox(
+                  height: 50,
+                ),
+
+                Center(
+                  child: Container(
+                          width: 350,
+                          height: 200,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12.0),
+                            border: Border.all(
+                              width: 4,
+                              color: Colors.white,
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                spreadRadius: 4,
+                                blurRadius: 10,
+                                color: Colors.black.withOpacity(0.1))
+                            ],
+                            shape: BoxShape.rectangle,
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/store2.png")
+                            )
+                          ),
+                          
+                        ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Column(
+                            children: [
+                            Text('         Urban Jungle-Indoor Plants                         ',textAlign: TextAlign.left,
+                            style: Styles.headLineStyle1.copyWith(
+                              fontSize: 20,
+                              color: Colors.teal.shade900,
+                              fontWeight: FontWeight.bold,
+                            ),),
+                            Text('     Thuthiyoor Rd, Kakkanad                                        ',textAlign: TextAlign.left,
+                            style: Styles.headLineStyle1.copyWith(
+                              fontSize: 15,
+                            ),)
+                            ],
+
+                          ),
+                  ],
+                ),
+                
                 
               ],
         ),
