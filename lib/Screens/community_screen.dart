@@ -181,7 +181,7 @@ class CommunityScreen extends StatelessWidget {
             color: Colors.grey,
           ),
           SizedBox(
-            height: 10,
+            height: 30,
           ),
           Row(
             children: [
@@ -228,6 +228,20 @@ class CommunityScreen extends StatelessWidget {
                   ))
             ],
           ),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            "Some Advice on Air Movement",
+            style: Styles.headLineStyle2,
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            "I had built an indoor grow room to save my plants from the winter. It is very very makeshift. Hung cheap Mylar over my garage door mechanism, using crates to elevate some of the pots, and have a light cycle of 16 on 8 off.I am saving freesia, hibiscus and passion flower for the winter. I have set up air flow within the Mylar room but it IS in my garage which is not in the best shape as plenty of air flow from outside comes",
+            style: Styles.headLineStyle3.copyWith(color: Colors.black),
+          )
         ],
       ),
     );
