@@ -14,14 +14,18 @@ class AppTicketTabs extends StatelessWidget {
     return FittedBox(
       child: Container(
           padding: const EdgeInsets.all(3.5),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(50),
+            color: Colors.lightGreen,
+          ),
           child: Row(
             children: [
               Container(
                 width: size.width * .24,
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   vertical: 7,
                 ),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.horizontal(
                       left: Radius.circular(50), right: Radius.circular(50)),
                   color: Colors.green,
@@ -32,10 +36,10 @@ class AppTicketTabs extends StatelessWidget {
               ),
               Container(
                 width: size.width * .24,
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   vertical: 7,
                 ),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius:
                       BorderRadius.horizontal(right: Radius.circular(50)),
                   color: Colors.transparent,
@@ -46,23 +50,19 @@ class AppTicketTabs extends StatelessWidget {
               ),
               Container(
                 width: size.width * .24,
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   vertical: 7,
                 ),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius:
                       BorderRadius.horizontal(right: Radius.circular(50)),
                   color: Colors.transparent,
                 ),
-                child: Center(
+                child: const Center(
                   child: Text("Vegetables"),
                 ),
               ),
             ],
-          ),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50),
-            color: Colors.lightGreen,
           )),
     );
   }

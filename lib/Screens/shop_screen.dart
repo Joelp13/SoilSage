@@ -12,32 +12,35 @@ class ShopScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: 1,
           onTap: (index) {
-            if (index==1)
-            {
-              Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const ShopScreen()));
+            if (index == 1) {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => const ShopScreen()));
+            } else if (index == 2) {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                          const CommunityScreen()));
+            } else if (index == 3) {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                          const ProfileScreen()));
+            } else if (index == 0) {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => HomeScreen()));
             }
-            else if(index==2)
-            {
-                   Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const CommunityScreen()));
-         
-            }
-            else if(index==3)
-            {
-                   Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const ProfileScreen()));
-         
-            }
-            else if(index==0)
-            {
-                   Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const HomeScreen()));
-         
-            }
-
           },
           elevation: 10,
           showSelectedLabels: true,
           showUnselectedLabels: false,
-          selectedItemColor: Color.fromARGB(255, 25, 80, 37),
-          unselectedItemColor: Color.fromARGB(255, 174, 238, 204),
+          selectedItemColor: const Color.fromARGB(255, 25, 80, 37),
+          unselectedItemColor: const Color.fromARGB(255, 174, 238, 204),
           type: BottomNavigationBarType.fixed,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),

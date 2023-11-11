@@ -5,42 +5,49 @@ import 'package:soil_sage/Screens/shop_screen.dart';
 import 'package:soil_sage/utils/app_layout.dart';
 import 'package:soil_sage/utils/app_styles.dart';
 import 'package:soil_sage/widgets/tickets_tab.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
+  final databox = Hive.box("databox");
 
   @override
   Widget build(BuildContext context) {
+    print(databox.get("Crops"));
     final size = AppLayout.getSize(context);
-    return Scaffold( bottomNavigationBar: BottomNavigationBar(
+    return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
           currentIndex: 0,
           onTap: (index) {
-            if (index==1)
-            {
-              Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const ShopScreen()));
+            if (index == 1) {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => const ShopScreen()));
+            } else if (index == 2) {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                          const CommunityScreen()));
+            } else if (index == 3) {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                          const ProfileScreen()));
+            } else if (index == 0) {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => HomeScreen()));
             }
-            else if(index==2)
-            {
-                   Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const CommunityScreen()));
-         
-            }
-            else if(index==3)
-            {
-                   Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const ProfileScreen()));
-         
-            }
-            else if(index==0)
-            {
-                   Navigator.pushReplacement(context as BuildContext, MaterialPageRoute(builder: (BuildContext context) => const HomeScreen()));
-         
-            }
-
           },
           elevation: 10,
           showSelectedLabels: true,
           showUnselectedLabels: false,
-          selectedItemColor: Color.fromARGB(255, 25, 80, 37),
-          unselectedItemColor: Color.fromARGB(255, 174, 238, 204),
+          selectedItemColor: const Color.fromARGB(255, 25, 80, 37),
+          unselectedItemColor: const Color.fromARGB(255, 174, 238, 204),
           type: BottomNavigationBarType.fixed,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
@@ -118,12 +125,12 @@ class HomeScreen extends StatelessWidget {
               height: 25,
             ),
             const AppTicketTabs(firstTab: "Recommend", secondTab: "Fruits"),
-            SizedBox(
+            const SizedBox(
               height: 55,
             ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.only(left: 20),
+              padding: const EdgeInsets.only(left: 20),
               child: Row(
                 children: [
                   Column(children: [
@@ -141,7 +148,7 @@ class HomeScreen extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 height: 120,
                               ),
                               Text(
@@ -158,14 +165,15 @@ class HomeScreen extends StatelessWidget {
                             left: -40,
                             top: -50,
                             child: Container(
-                              padding: EdgeInsets.all(30),
+                              padding: const EdgeInsets.all(30),
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   border: Border.all(
                                       width: 58,
-                                      color:
-                                          Color.fromARGB(250, 228, 240, 234)),
-                                  color: Color.fromARGB(250, 228, 240, 234)),
+                                      color: const Color.fromARGB(
+                                          250, 228, 240, 234)),
+                                  color:
+                                      const Color.fromARGB(250, 228, 240, 234)),
                             )),
                         Positioned(
                             top: -20,
@@ -192,7 +200,7 @@ class HomeScreen extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 height: 120,
                               ),
                               Text(
@@ -209,14 +217,15 @@ class HomeScreen extends StatelessWidget {
                             left: -40,
                             top: -50,
                             child: Container(
-                              padding: EdgeInsets.all(30),
+                              padding: const EdgeInsets.all(30),
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   border: Border.all(
                                       width: 58,
-                                      color:
-                                          Color.fromARGB(250, 228, 240, 234)),
-                                  color: Color.fromARGB(250, 228, 240, 234)),
+                                      color: const Color.fromARGB(
+                                          250, 228, 240, 234)),
+                                  color:
+                                      const Color.fromARGB(250, 228, 240, 234)),
                             )),
                         Positioned(
                             top: -20,
@@ -243,7 +252,7 @@ class HomeScreen extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 height: 120,
                               ),
                               Text(
@@ -260,14 +269,15 @@ class HomeScreen extends StatelessWidget {
                             left: -40,
                             top: -50,
                             child: Container(
-                              padding: EdgeInsets.all(30),
+                              padding: const EdgeInsets.all(30),
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   border: Border.all(
                                       width: 58,
-                                      color:
-                                          Color.fromARGB(250, 228, 240, 234)),
-                                  color: Color.fromARGB(250, 228, 240, 234)),
+                                      color: const Color.fromARGB(
+                                          250, 228, 240, 234)),
+                                  color:
+                                      const Color.fromARGB(250, 228, 240, 234)),
                             )),
                         Positioned(
                             top: -20,
@@ -282,7 +292,7 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Text(

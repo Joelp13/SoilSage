@@ -1,22 +1,26 @@
-
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:soil_sage/Screens/bottom.dart';
-import 'package:soil_sage/Screens/home_screen.dart';
 import 'package:soil_sage/login.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  await Hive.openBox('databox');
   runApp(const MyApp());
 }
-void getlocation() async
-{
-   await Geolocator.checkPermission();
-   await Geolocator.requestPermission();
 
-Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.best);
-print('ss');
-print(position);
+Future<Map<String, double>> getlocation() async {
+  await Geolocator.checkPermission();
+  await Geolocator.requestPermission();
 
+  Position position = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.best);
+  print('ss');
+  var locationData = {
+    "Latitutde": position.latitude,
+    "Longitude": position.longitude
+  };
+  return locationData;
 }
 
 class MyApp extends StatelessWidget {
@@ -24,12 +28,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primaryColor: Colors.white,
-      ),
-      home: const Mylogin()
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primaryColor: Colors.white,
+        ),
+        home: const Mylogin());
   }
 }
